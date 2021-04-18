@@ -43,6 +43,22 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(context, DB_NAME,null,DB
                 "id_chapter Integer," +
                 "FOREIGN KEY(id_chapter) REFERENCES chapter(chapter_id))"
         db?.execSQL(q3)
+        val q4 ="INSERT INTO question(question_id,question_phrase,id_chapter)" +
+                "VALUES" +
+                "(NULL,'AAA', 2 )," +
+                "(NULL,'BBB', 2 )," +
+                "(NULL,'CCC', 2 )," +
+                "(NULL,'DDD', 2 )," +
+                "(NULL,'EEE', 2 )," +
+                "(NULL,'FFF', 2 )," +
+                "(NULL,'GGG', 2 )," +
+                "(NULL,'HHH', 2 )," +
+                "(NULL,'III', 2 )," +
+                "(NULL,'JJJ', 2 )," +
+                "(NULL,'KKK', 2 )," +
+                "(NULL,'LLL', 2 )," +
+                "(NULL,'MMM', 2 )"
+        db?.execSQL(q4)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {

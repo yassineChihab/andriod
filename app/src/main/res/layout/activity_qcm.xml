@@ -6,4 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".QcmActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyqcm"
+        android:layout_width="384dp"
+        android:layout_height="581dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_envoyer"
+        android:layout_width="103dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="32dp"
+        android:text="Envoyer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyqcm" />
+
+    <Button
+        android:id="@+id/btn_reveser"
+        android:layout_width="103dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="152dp"
+        android:text="Réveser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyqcm" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

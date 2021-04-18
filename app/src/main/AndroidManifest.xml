@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project">
-        <activity android:name=".QcmActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".loginActivity"  android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".QcmActivity" />
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".SplashScreen"
-            android:theme="@style/SplashScreenBackground">
+            android:theme="@style/SplashScreenBackground"
+           >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

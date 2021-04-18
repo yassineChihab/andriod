@@ -10,7 +10,8 @@ class CustomAdapter( val list: ArrayList<IdTitleChapter>,private  val onchapterC
         RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
 
-    /**
+    /**            radio1=view.findViewById(R.id.radio1)
+
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
      */

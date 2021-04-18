@@ -72,8 +72,9 @@ class MainActivity : AppCompatActivity(),onChapter_clickListener {
 
     override fun onChapterClickListenner(postion: Int) {
             val intent=Intent(this,QcmActivity::class.java)
-            intent.putExtra("chapter",chapterList[postion].title)
+            intent.putExtra("chapter",chapterList[postion].id)
             startActivity(intent)
+           // finish()
     }
 }
 
