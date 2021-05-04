@@ -22,7 +22,7 @@ class loginActivity : AppCompatActivity() {
                 Toast.makeText(this,"Entre votre nom svp",Toast.LENGTH_SHORT).show()
             }
             else{
-                val intent=Intent(this ,MainActivity::class.java)
+                val intent=Intent(this ,dashBoard::class.java)
                 startActivity(intent)
                 finish()
 

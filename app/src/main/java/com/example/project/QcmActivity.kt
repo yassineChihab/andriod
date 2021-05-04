@@ -3,58 +3,91 @@ package com.example.project
 import android.database.Cursor
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
-
+import androidx.recyclerview.widget.SnapHelper
+import com.example.project.databinding.ActivityChapterBinding
+import com.example.project.databinding.ActivityQcmBinding
+import java.util.concurrent.TimeUnit
 
 
 class QcmActivity : AppCompatActivity() {
 
-    var db: DatabaseHelper? = null
-    private lateinit var questionList: ArrayList<Question>
-    private var adapterQst: RecyclerView.Adapter<customAdapterQcm.ViewHolder>? = null
+    private lateinit var  binding: ActivityQcmBinding
+
+    private var layoutManager: RecyclerView.LayoutManager? = null
+    private var questionAdapter: RecyclerView.Adapter<QuestionAdapter.QuestionViewHolder>? = null
+
+    var  quesID:Int=0
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_qcm)
-        listQuestion()
+        binding= ActivityQcmBinding.inflate(layoutInflater)
+        val view=binding.root
+        setContentView(view)
+        questionAdapter=QuestionAdapter(this)
+        layoutManager=LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        binding.questionsView.adapter=questionAdapter
+        binding.questionsView.layoutManager=layoutManager
+        binding.questionCounter.setText("1/10")
 
-
-
-
-
-
-
+        setSapHelper();
+        startTimer();
 
     }
-    fun listQuestion() {
 
-        // DB
-        db = DatabaseHelper(this)
-        val id=intent.getIntExtra("chapter",1)
+    private fun startTimer() {
+        val totalTime:Long=10*60*1000
+        val timer = object: CountDownTimer(totalTime+2000, 1000) {
+            override fun onTick(remainigTime: Long) {
+                val time:String= String.format("%02d:%02d min",
+                    TimeUnit.MILLISECONDS.toMinutes(remainigTime),
+                    TimeUnit.MILLISECONDS.toSeconds(remainigTime)-
+                    TimeUnit.MINUTES.toSeconds( TimeUnit.MILLISECONDS.toMinutes(remainigTime))
+                    )
+                binding.timer.setText(time)
 
-        // Fetch categories
-        var questionCursor: Cursor? = db!!.rawQuery("SELECT question_id , question_phrase ,id_chapter FROM question WHERE id_chapter="+id+"")
-        var questionSize: Int = questionCursor!!.count
-        Log.d("listQuestion()", "questionSize=" + questionSize)
+            }
 
-        // Add a list of chpater
-        questionList = ArrayList<Question>()
-        while (questionCursor.moveToNext()) {
-            val qstId = questionCursor.getInt(0)
-            val qstText = questionCursor.getString(1)
-            val chapterId=questionCursor.getInt(2)
-            Log.d("listQuestion()", "qstId=" + qstId + " qstText=" + qstText +"chapterId" +chapterId)
-            questionList.add(Question(qstId,qstText,chapterId))
+            override fun onFinish() {
 
+            }
         }
+        timer.start()
+    }
 
-        // Add to list
-        val recy = findViewById<RecyclerView>(R.id.recyqcm)
-        adapterQst=customAdapterQcm(questionList)
-        recy.adapter = adapterQst
-        recy.layoutManager = LinearLayoutManager(this)
-        recy.setHasFixedSize(true)
+    fun setSapHelper(){
+        val snapHleper=PagerSnapHelper()
+        snapHleper.attachToRecyclerView(binding.questionsView)
+        binding.questionsView.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                val view =snapHleper.findSnapView(recyclerView.layoutManager)
+                quesID= recyclerView.layoutManager!!.getPosition(view!!)
+                binding.questionCounter.setText((quesID+1).toString() + "/10")
+            }
 
-    } // listCategories
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+            }
+        })
+    }
+
+
+    fun next(view: View) {
+        if(quesID<10){
+            binding.questionsView.smoothScrollToPosition(quesID+1)
+        }
+    }
+    fun Go_Back(view: View) {
+
+        if(quesID>0){
+            binding.questionsView.smoothScrollToPosition(quesID-1)
+        }
+    }
 }

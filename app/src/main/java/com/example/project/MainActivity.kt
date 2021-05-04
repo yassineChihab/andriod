@@ -5,6 +5,7 @@ import android.database.Cursor
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -76,6 +77,8 @@ class MainActivity : AppCompatActivity(),onChapter_clickListener {
             startActivity(intent)
            // finish()
     }
+
+    fun LancerQuiz(view: View) {}
 }
 
 

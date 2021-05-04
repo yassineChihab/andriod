@@ -6,33 +6,108 @@
     android:layout_height="match_parent"
     tools:context=".QcmActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyqcm"
-        android:layout_width="384dp"
-        android:layout_height="581dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+    <View
+        android:id="@+id/view4"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/background_bottom"
+        app:layout_constraintEnd_toEndOf="@+id/questions_view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+
+        android:layout_marginTop="16dp"
+        android:drawableLeft="@drawable/ic_timer"
+        android:drawablePadding="10dp"
+        android:text="30:00 min"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_envoyer"
-        android:layout_width="103dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="32dp"
-        android:text="Envoyer"
+    <TextView
+        android:id="@+id/questionCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="17dp"
+        android:drawableRight="@drawable/ic_question"
+        android:drawablePadding="10dp"
+        android:text="1/10"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"
+        app:drawableTint="@color/color_white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyqcm" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/questions_view"
+        android:layout_width="391dp"
+        android:layout_height="631dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="409dp"
+        android:layout_height="162dp"
+        android:layout_marginTop="692dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/background_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_reveser"
-        android:layout_width="103dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="152dp"
-        android:text="Réveser"
+        android:id="@+id/after"
+        android:layout_width="104dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_1"
+        android:text="Envoyer"
+        android:textColor="@color/color_white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyqcm" />
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="53dp"
+        android:onClick="next"
+        android:layout_height="52dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/next" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="53dp"
+        android:layout_height="52dp"
+        android:onClick="Go_Back"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:srcCompat="@drawable/before" />
+
+    <Button
+        android:id="@+id/before"
+        android:layout_width="104dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_1"
+        android:text="Effacer"
+        android:textColor="@color/color_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
