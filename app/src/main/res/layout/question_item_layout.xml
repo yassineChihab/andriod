@@ -7,21 +7,17 @@
   >
 
 
-
     <View
         android:id="@+id/view5"
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="12dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
         android:background="@drawable/rounded_box"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timer" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 
@@ -75,19 +71,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/unselected_btn"
+        android:elevation="3dp"
         android:padding="15dp"
+        android:stateListAnimator="@null"
+        android:onClick="optionA"
         android:text="reponse A"
         android:textSize="16dp"
-        android:elevation="3dp"
         android:translationZ="3dp"
-        android:stateListAnimator="@null"
         app:layout_constraintEnd_toEndOf="@+id/view5"
         app:layout_constraintStart_toStartOf="@+id/view5"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <Button
         android:id="@+id/option_2"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/unselected_btn"
@@ -104,7 +101,7 @@
 
     <Button
         android:id="@+id/option_3"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/unselected_btn"
@@ -121,7 +118,7 @@
 
     <Button
         android:id="@+id/option_4"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/unselected_btn"
