@@ -19,10 +19,10 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="56dp"
             android:fontFamily="sans-serif-black"
-            android:text="Dashboard Menu"
+            android:text="Bienvenue"
             android:textColor="#ffffff"
             android:textSize="28sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,12 +32,13 @@
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/top_1" />
+            app:srcCompat="@drawable/logoensasspalsh" />
 
         <TextView
             android:id="@+id/textView2"
@@ -46,7 +47,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:fontFamily="casual"
-            android:text="your Subtitle..."
+            android:text="ensa safi"
             android:textColor="#ffffff"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -89,7 +90,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@mipmap/icon1" />
+                    app:srcCompat="@drawable/homeicon" />
 
                 <TextView
                     android:id="@+id/text2"
@@ -126,7 +127,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@mipmap/icon2" />
+                    app:srcCompat="@drawable/quizicon" />
 
                 <TextView
                     android:id="@+id/text3"
@@ -169,7 +170,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@mipmap/icon3" />
+                    app:srcCompat="@drawable/book" />
 
                 <TextView
                     android:id="@+id/text4"
@@ -205,7 +206,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@mipmap/icon4" />
+                    app:srcCompat="@drawable/rank" />
 
                 <TextView
                     android:id="@+id/text5"
@@ -248,7 +249,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@mipmap/icon5" />
+                    app:srcCompat="@drawable/profil" />
 
                 <TextView
                     android:id="@+id/text6"
@@ -284,7 +285,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@mipmap/icon6" />
+                    app:srcCompat="@drawable/logout" />
 
                 <TextView
                     android:id="@+id/textView3"

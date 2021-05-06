@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project">
-        <activity android:name=".ResultActivity"></activity>
+
+        <activity android:name=".ResultActivity" />
         <activity android:name=".ChapterActivity" />
         <activity android:name=".chapterActivity" />
         <activity android:name=".signupactivity" />
@@ -22,8 +23,8 @@
         <activity android:name=".QcmActivity" />
         <activity android:name=".MainActivity" />
         <activity
-            android:name=".SplashScreen"
-            android:theme="@style/SplashScreenBackground">
+            android:name=".Spalch"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

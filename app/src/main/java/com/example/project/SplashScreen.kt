@@ -9,7 +9,7 @@ class SplashScreen: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val time:Long=1000
+        val time:Long=3000
 
 
        Handler().postDelayed(
