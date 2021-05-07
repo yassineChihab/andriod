@@ -191,6 +191,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:onClick="AfficheFragemntRank"
                 android:layout_weight="1"
                 android:background="@drawable/background_button">
 
@@ -235,6 +236,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:onClick="afficheProgilFragmant"
                 android:background="@drawable/background_button">
 
                 <ImageView
@@ -303,5 +305,14 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="392dp"
+        android:layout_height="536dp"
+        android:id="@+id/maincontainer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
