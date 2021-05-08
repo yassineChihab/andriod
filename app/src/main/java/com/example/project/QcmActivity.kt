@@ -1,11 +1,13 @@
 package com.example.project
 
+import android.content.Intent
 import android.database.Cursor
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
+import android.widget.BaseAdapter
 import android.widget.GridView
 import android.widget.TextView
 import androidx.core.view.GravityCompat
@@ -29,7 +31,7 @@ class QcmActivity : AppCompatActivity() {
 
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var questionAdapter: RecyclerView.Adapter<QuestionAdapter.QuestionViewHolder>? = null
-
+    private  var QuestionGridAdapter:QuestionGridAdapter?=null
     var  quesID:Int=0
     var drawer:DrawerLayout?=null
 
@@ -47,6 +49,9 @@ class QcmActivity : AppCompatActivity() {
         var questionCounter=findViewById<TextView>(R.id.questionCounter)
         questionCounter.setText("1/10")
         drawer=findViewById(R.id.drawer_layout)
+        QuestionGridAdapter= QuestionGridAdapter(10)
+        val GridListQuest:GridView=findViewById(R.id.ques_list_gv)
+        GridListQuest.adapter=QuestionGridAdapter
 
 
         setSapHelper();
@@ -108,6 +113,12 @@ class QcmActivity : AppCompatActivity() {
             var questionsView=findViewById<RecyclerView>(R.id.questions_view)
             questionsView!!.smoothScrollToPosition(quesID-1)
         }
+    }
+
+    fun AfficheScore(view: View) {
+        val intent= Intent(this ,ResultActivity ::class.java)
+        startActivity(intent)
+        finish()
     }
 
 

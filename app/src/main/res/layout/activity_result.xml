@@ -53,62 +53,35 @@
         app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="EARNED COINS"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/score"
-        app:layout_constraintStart_toStartOf="@+id/score"
-        app:layout_constraintTop_toBottomOf="@+id/score" />
-
-    <TextView
-        android:id="@+id/earnedCoins"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/ic_dollar"
-        android:drawablePadding="10dp"
-        android:text="500"
-        android:textColor="@android:color/black"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView13"
-        app:layout_constraintStart_toStartOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
     <Button
-        android:id="@+id/quiterBtn"
+        android:id="@+id/Reveser"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/button_3"
-        android:drawableLeft="@drawable/ic_share"
+        android:drawableLeft="@android:drawable/ic_menu_help"
         android:paddingLeft="20dp"
-        android:text="Quiter"
+        android:text="Réviser"
         android:textColor="@color/color_white"
-        app:layout_constraintEnd_toStartOf="@+id/restartBtn"
+        app:layout_constraintEnd_toStartOf="@+id/Quiter"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/earnedCoins" />
+        app:layout_constraintTop_toBottomOf="@+id/score" />
 
     <Button
-        android:id="@+id/restartBtn"
+        android:id="@+id/Quiter"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
         android:background="@drawable/button_1"
-        android:text="Restart"
+        android:text="Quiter"
         android:textColor="@color/color_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/quiterBtn"
-        app:layout_constraintTop_toBottomOf="@+id/earnedCoins" />
+        app:layout_constraintStart_toEndOf="@+id/Reveser"
+        app:layout_constraintTop_toBottomOf="@+id/score" />
 </androidx.constraintlayout.widget.ConstraintLayout>

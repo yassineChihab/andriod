@@ -10,7 +10,7 @@ class QuestionGridAdapter(var numofQues:Int): BaseAdapter() {
 
 
     override fun getCount(): Int {
-      return  10;
+      return  numofQues;
     }
 
     override fun getItem(position: Int): Any {
@@ -29,7 +29,7 @@ class QuestionGridAdapter(var numofQues:Int): BaseAdapter() {
             view=convertView
         }
         val quesTv:TextView = view.findViewById(R.id.ques_num)
-        quesTv.setText(position+1)
+        quesTv.setText((position+1).toString())
 
         return view
     }
